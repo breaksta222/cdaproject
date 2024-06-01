@@ -1,10 +1,4 @@
 # project-webpage
+캡스톤 디자인 A 3조 웹 페이지 입니다.
 
-This is a template for a project webpage. You are welcome to use it to present your exciting 
-works, simply keep the footer to attribute the source to this repository. Another example can 
-be found [here](http://imagine.enpc.fr/~monniert/docExtractor/).
-
-![resrc/preview.png](resrc/preview.png)
-
-## How to use :rocket:
-
+![preview.jpg](preview.png)
