@@ -1,10 +1,11 @@
  <!DOCTYPE html>
-<html lang="en">
+<html lang="kor">
 <head>
-  <title>DTI Clustering</title>
+  <title>날숨 가스 사용자 인증 시스템</title>
   <meta name="description" content="Project page for Deep Transformation-Invariant Clustering.">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <meta charset="utf-8">
+  
 
   <!--Facebook preview-->
   <meta property="og:image" content="https://imagine.enpc.fr/~monniert/DTIClustering/thumbnail.png">
@@ -28,70 +29,104 @@
   <link href="style.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
 
 </head>
-<body>
+<script language="javascript">
+  function test(){
+    alert("버튼을 클릭하셨습니다. 사용자 인식을 시작합니다.");
+    // 가스 비교 후 출력 
+  }
+</script>
+<body class="regular">
+  <style>
+    body{
+      background-image: "resrc/main.jpg";
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      background-color: black;
+      color: antiquewhite;
+    }
+  </style>
 
 <div class="container" style="text-align:center; padding:2rem 15px">
   <div class="row" style="text-align:center">
-    <h1>Deep Transformation-Invariant Clustering</h1>
-    <h4>NeurIPS 2020 (oral presentation)</h4>
+    <h1 class="regular" style="color: white">다양한 날숨 가스를 이용한 무자각 사용자 정보 인식 시스템</h1>
+    <h4 class="light">세종대학교 캡스톤디자인A 3조 시스템 웹 페이지입니다. </h4>
   </div>
   <div class="row" style="text-align:center">
     <div class="col-xs-0 col-md-3"></div>
     <div class="col-xs-12 col-md-6">
-      <h4>
-        <a href="https://imagine.enpc.fr/~monniert/"><nobr>Tom Monnier</nobr></a> &emsp;
-        <a href="https://imagine.enpc.fr/~groueixt/"><nobr>Thibault Groueix</nobr></a> &emsp;
-        <a href="https://imagine.enpc.fr/~aubrym/"><nobr>Mathieu Aubry</nobr></a>
+      <h4 class="regular">
+        <a href="https://imagine.enpc.fr/~monniert/"><nobr>권익근</nobr></a> &emsp;
+        <a href="https://imagine.enpc.fr/~groueixt/"><nobr>김민성</nobr></a> &emsp;
+        <a href="https://imagine.enpc.fr/~aubrym/"><nobr>김민재</nobr></a> &emsp;
+        <a href="https://www.instagram.com/5uv1z/"><nobr>이수빈</nobr></a>
       </h4>
-      LIGM, <nobr>&Eacute;cole des Ponts</nobr>, <nobr>Univ Gustave Eiffel</nobr>, CNRS,
-      <nobr>Marne-la-Vall&eacute;e, France</nobr>
+      
     </div>
     <div class="hidden-xs hidden-sm col-md-1" style="text-align:left; margin-left:0px; margin-right:0px">
-      <a href="https://arxiv.org/pdf/2006.11132.pdf" style="color:inherit">
+      <a href="https://arxiv.org/pdf/2006.11132.pdf" style="color:inherit"> 
         <i class="fa fa-file-pdf-o fa-4x"></i></a> 
+        <!-- pdf 파일 (최종 보고서 파일 링크로 수정하기!!) -->
     </div>
     <div class="hidden-xs hidden-sm col-md-2" style="text-align:left; margin-left:0px;">
-      <a href="https://github.com/monniert/dti-clustering" style="color:inherit">
+      <a href="https://github.com/breaksta222/cdaproject" style="color:inherit">
         <i class="fa fa-github fa-4x"></i></a>
+        <!-- 이 웹 페이지 깃허브 링크 생성 후 삽입하기!! -->
     </div>
+    하단의 <b>시작</b> 버튼을 눌러 사용자를 구분합니다. 
   </div>
 </div>
 
 <div class="container" style="text-align:center; padding:1rem">
-  <img src="resrc/teaser.jpg" alt="teaser.jpg" class="text-center" style="width: 100%; max-width: 1100px">
-  <h3 style="text-align:center; padding-top:1rem">
-    <a class="label label-info" href="https://arxiv.org/abs/2006.11132">Paper</a>
-    <a class="label label-info" href="https://github.com/monniert/dti-clustering">Code</a>
-    <a class="label label-info" href="https://www.youtube.com/embed/j20MBc1hWGQ">Video</a>
-    <a class="label label-info" href="resrc/dtic_long.pptx">Slides</a>
-    <a class="label label-info" href="resrc/ref.bib">BibTeX</a>
+  <img src="resrc/main.jpg" alt="main.jpg" class="text-center" style="width: 100%; max-width: 1100px">
+  <!-- 
+      
+     <form action="/examples/media/request.php"> 
+      <fieldset>
+        <legend>입력 양식</legend>
+        data1: <br>
+        <input type="text" name="data1"><br>
+        data2: <br>
+        <input type="text" name="data2"><br><br>
+        <input type="submit" value="전송">
+      </fieldset>
+    </form>
   </h3>
+  <h3 style="text-align:center; padding-top:1rem;">
+    <form>
+    <input type="button" value="시작" onclick="test()">
+   </form>
+  </h3>-->
+  <button class="w-btn w-btn-indigo" type="button"onclick="test()">
+    시작
+</button>
 </div>
-
 <div class="container">
   <h3>Abstract</h3>
   <hr/>
-  <p>
-    Recent advances in image clustering typically focus on learning better deep 
-    representations. In contrast, we present an orthogonal approach that does not rely on 
-    abstract features but instead learns to <b>predict image transformations</b> and directly performs 
-    <b>clustering in pixel space</b>. This learning process naturally fits in the 
-    gradient-based training of K-means and Gaussian mixture model, without requiring any 
-    additional loss or hyper-parameters. It leads us to two new deep transformation-invariant
+  <!-- 설명 간단히 넣으면 될듯? -->
+  <h4 class="light">
+    저희 세종대학교 전자정보통신공학과 캡스톤디자인 A 3조는
+    <b>다양한 날숨 가스를 이용한 무자각 사용자 정보 인식 시스템</b>을 개발하였습니다.
+     This learning process naturally fits in the gradient-based training of K-means and Gaussian mixture model,
+      without requiring any additional loss or hyper-parameters. It leads us to two new deep transformation-invariant
     clustering frameworks, which <b>jointly learn prototypes and transformations</b>. More 
     specifically, we use deep learning modules that enable us to resolve invariance to spatial, 
     color and morphological transformations. Our approach is conceptually simple and comes with 
     several advantages, including the possibility to easily adapt the desired invariance to the 
     task and a <b>strong interpretability</b> of both cluster centers and assignments to clusters.  We 
-    demonstrate that our novel approach yields <b>competitive and highly promising results</b> on 
+    demonstrate that our novel approach  yields <b>competitive and highly promising results</b> on 
     standard image clustering benchmarks. Finally, we showcase its robustness and the 
     advantages of its improved interpretability by visualizing clustering results over real 
     photograph collections.
-  </p>
+</h4>
 
-  <h3>Video</h3>
+  <!--<h3>Video</h3>
   <hr/>
   <div class="row" style="text-align:center">
     <div class="col-xs-6 text-center">
@@ -268,12 +303,12 @@
     discussions and valuable feedback.
   </p>
 </div>
-
+-->
 <div class="container" style="padding-top:3rem; padding-bottom:3rem">
-  <p style="text-align:center">
+  <h5 style="text-align:center">
   &#169; This webpage was in part inspired from this
   <a href="https://github.com/monniert/project-webpage">template</a>.
-  </p>
+  </h5>
 </div>
 
 </body>
