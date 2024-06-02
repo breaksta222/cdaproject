@@ -7,5 +7,5 @@
 # Preview is here!   
 ![preview.JPG](preview.JPG)
 
-# Do you have a question?    
+# Do you have any question?    
 💌mailto:breaksta222@naver.com 
