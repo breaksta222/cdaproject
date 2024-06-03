@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="kor">
 <head>
   <title>날숨 가스 사용자 인증 시스템</title>
@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <meta charset="utf-8">
   
-
+<!-- 
+  이 코드는 2024년 1학기 세종대학교 캡스톤 디자인 A 3조 project web page code입니다.
+ -->
   <!--Facebook preview-->
   <meta property="og:image" content="resrc/preview.JPG">
   <meta property="og:image:type" content="image/png">
@@ -79,37 +81,12 @@
 
 <div class="container" style="text-align:center; padding:1rem">
   <img src="resrc/main.jpg" alt="main.jpg" class="text-center" style="width: 100%; max-width: 1100px">
-  <!-- 
-      
-     <form action="/examples/media/request.php"> 
-      <fieldset>
-        <legend>입력 양식</legend>
-        data1: <br>
-        <input type="text" name="data1"><br>
-        data2: <br>
-        <input type="text" name="data2"><br><br>
-        <input type="submit" value="전송">
-      </fieldset>
-    </form>
-  </h3>
-  <h3 style="text-align:center; padding-top:1rem;">
-    <form>
-    <input type="button" value="시작" onclick="test()">
-   </form>
-  </h3>-->
-  
-  <!-- <button class="w-btn w-btn-indigo" type="button"onclick="test()"> 
-    시작
-</button>
--->
 
-<!-- Input field for the user to enter data -->
-<input type="number" id="userInput" placeholder="Enter a number (1-6)">
 
-<!-- Button to trigger the comparison -->
-<button id="checkButton">시작!</button>
+<!--시작 버튼 -->
+<button id="startButton" class="w-btn w-btn-indigo">시작!</button>
 
-<!-- Div to display the result -->
+<!-- 결과 창 -->
 <div id="resultBox">
     <p id="result"></p>
 </div>
@@ -118,7 +95,7 @@
 <div class="container">
   <h3>Abstract</h3>
   <hr/>
-  <!-- 설명 간단히 넣으면 될듯? -->
+  <!--  프로젝트 설명 -->
   <h>안녕하세요. 저희 세종대학교 전자정보통신공학과 캡스톤디자인 A 3조는
   <b>다양한 날숨 가스를 이용한 무자각 사용자 정보 인식 시스템</b>을 개발하였습니다.
   현대 사회에서는 차량의 안전 문제가 더욱 중요해지고 있습니다. 
@@ -134,7 +111,7 @@
 </h4>
 
 <style>
-  /* 입력 칸 스타일 */
+  /* 입력 칸 스타일 (화면 x) */
   #userInput {
             background-color: #333;
             color: white;
@@ -178,13 +155,14 @@
 </style>
 </body>
 <script language="javascript">
-  function test(){
-    alert("버튼을 클릭하셨습니다. 사용자 인식을 시작합니다.");
+  // function test(){
+    //alert("버튼을 클릭하셨습니다. 사용자 인식을 시작합니다.");
     
     
     // 가스 비교 후 출력 
-  }
-  // 데이터 매핑
+  //} test 함수 이용하지 않음 하단 스크립트부터 실행 
+
+  // 데이터 값 입력 
   const dataMapping = {
             1: '권익근 님 환영합니다.', //알코올 x
             2: '권익근 님, 알코올이 인식되어 이용할 수 없습니다.',// 알코올 o
@@ -194,37 +172,44 @@
             6: '김민성 님, 알코올이 인식되어 이용할 수 없습니다.'//알코올 o
         };
 
-        // 버튼 요소와 결과를 표시할 요소를 가져옵니다.
-        const checkButton = document.getElementById('checkButton');
-        const resultElement = document.getElementById('result');
-        const resultBox = document.getElementById('resultBox');
+        // 버튼 요소와 결과를 표시할 요소 
+  const startButton = document.getElementById('startButton');
+  const resultElement = document.getElementById('result');
+  const resultBox = document.getElementById('resultBox');
         
         // 타이머 변수 선언
         let timer;
         let hideTimer;
 
-        // 버튼에 클릭 이벤트 리스너를 추가합니다.
-        checkButton.addEventListener('click', checkButtonHandler);
+        // 숫자 입력 이벤트 리스너 추가
+        document.addEventListener('keydown', (event) => {
+            if (event.key >= '1' && event.key <= '6') {
+                const userNumber = parseInt(event.key, 10);
+                showResult(userNumber);
+            }
+        });
 
-        function checkButtonHandler() {
+        // 시작 버튼에 클릭 이벤트 리스너 추가
+        startButton.addEventListener('click', () => {
+            // 클릭 시  로컬 파일 탐색기 열기 
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.click();
+        });
+
+        function showResult(userNumber) {
             // 타이머 시작
             timer = setTimeout(() => {
                 resultElement.textContent = '입력이 없습니다. 자바스크립트를 종료합니다.';
                 resultBox.style.display = 'flex';
-                // 자바스크립트를 사실상 종료시키기 위해 이벤트 리스너 제거
-                checkButton.removeEventListener('click', checkButtonHandler);
+                // 숫자 입력 이벤트 리스너 제거
+                document.removeEventListener('keydown', handleKeyDown);
 
                 // 5초 후에 결과 화면 숨김
                 hideTimer = setTimeout(() => {
                     resultBox.style.display = 'none';
                 }, 5000);
             }, 30000); // 30초 후에 실행
-
-            // 입력 필드의 값을 가져옵니다.
-            const userInput = document.getElementById('userInput').value;
-
-            // 입력된 값을 숫자로 변환합니다.
-            const userNumber = parseInt(userInput, 10);
 
             // 입력된 값이 1부터 6 사이의 숫자인지 확인합니다.
             if (dataMapping.hasOwnProperty(userNumber)) {
@@ -237,13 +222,14 @@
                 resultBox.style.display = 'flex';
             }
 
-            // 4초 후에 결과 화면 숨김
+            // 5초 후에 결과 화면 숨김
             hideTimer = setTimeout(() => {
                 resultBox.style.display = 'none';
-            }, 4000);
+            }, 5000);
 
             // 타이머 초기화
             clearTimeout(timer);
         }
 </script>
 </html> 
+
